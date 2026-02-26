@@ -271,3 +271,28 @@ echo "  /etc/init.d/zerotier restart            # перезапустить с�
 echo "  apk info | grep zerotier                # информация о пакете"
 echo ""
 echo "${GREEN}ГОТОВО!${NC}"
+/etc/init.d/zerotier stop
+killall zerotier-one 2>/dev/null
+
+# Удалить всё
+rm -rf /var/lib/zerotier-one/*
+rm -f /etc/config/zerotier
+
+# Создать конфиг заново
+cat > /etc/config/zerotier << 'EOF'
+config zerotier 'global'
+    option enabled '1'
+    option port '9993'
+
+config zerotier
+    option enabled '1'
+    list join 'cf719fd540faee8e'
+EOF
+
+# Запустить
+/etc/init.d/zerotier start
+sleep 15
+
+# Проверить
+zerotier-cli status
+zerotier-cli listnetworks
