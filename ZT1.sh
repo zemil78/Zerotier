@@ -126,7 +126,7 @@ log "Создание конфигурационной директории: $ZT
 mkdir -p "$ZT_CONFIG_PATH"
 
 # Удалить опасную строку rm -rf из init.d скрипта
-log "Патчинг /etc/init.d/zerotier..."
+log "Патчинг /etc/init.d/zerotier(Комментируем)..."
 if [ -f /etc/init.d/zerotier ]; then
     sed -i 's/^\([^#]*rm -rf "${CONFIG_PATH}"\)/# \1/' /etc/init.d/zerotier
     success "Закоментрованна строка rm -rf из init.d"
