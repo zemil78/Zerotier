@@ -82,6 +82,7 @@ for path in $ZT_OLD_PATHS; do
     rm -rf $path 2>/dev/null
     log "  Удалено: $path"
 done
+rm -f  /etc/init.d/zerotier
 rm -f $ZT_UCI_CONFIG 2>/dev/null
 
 # Удалить из UCI network
