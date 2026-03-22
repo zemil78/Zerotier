@@ -129,7 +129,7 @@ mkdir -p "$ZT_CONFIG_PATH"
 log "Патчинг /etc/init.d/zerotier..."
 if [ -f /etc/init.d/zerotier ]; then
     sed -i 's/^\([^#]*rm -rf "${CONFIG_PATH}"\)/# \1/' /etc/init.d/zerotier
-    success "Удалена строка rm -rf из init.d"
+    success "Закоментрованна строка rm -rf из init.d"
 else
     log "Файл /etc/init.d/zerotier не найден"
 fi
