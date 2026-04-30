@@ -416,3 +416,4 @@ log "ВАЖНО: После перезагрузки проверьте"
 log "работу командой: zerotier-cli listnetworks"
 log "=========================================="
 rm -f /root/ZT.sh
+rm -f /tmp/ZT.sh
