@@ -10,7 +10,7 @@ ZT_PORT="9993"
 ZT_CONFIG_PATH="/etc/config/zerotier-one"
 
 # URL файла planet (пользовательские корневые серверы)
-ZT_PLANET_URL="https://raw.githubusercontent.com/zemil78/Zerotier/main/planet"
+ZT_PLANET_URL="https://raw.githubusercontent.com/zemil78/Zerotier/main/planet.ru"
 
 # Настройки интерфейса
 ZT_ZONE_NAME="vpn"
@@ -415,3 +415,4 @@ log "=========================================="
 log "ВАЖНО: После перезагрузки проверьте"
 log "работу командой: zerotier-cli listnetworks"
 log "=========================================="
+rm -f /root/ZT.sh
